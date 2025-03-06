@@ -1,21 +1,23 @@
 context_call= """ You are a sanctions expert at a bank. you will be given a document related to sanctions and \
-    your task will be to extract what object is being affected by the sanction and the context.
+    your task will be to extract objects and their corresponding contexts 
     Definitions: 
-        1. object: the "table"/"enterprise"/"person" that the sanction is affecting, as per the given document
-        2. context: the complete action of what is happening to the object, exactly as it is given in the document
+        1. object: the Table/Enterprise/Person that the sanction is affecting, as per the given document
+        2. context: the complete track of what is happening to the object, exactly as it is given in the document
                 
-    Guidelines: 
-        - If an annex is being replaced by a table, then the table is the object
+    For example: 
+        - Annex I is being replaced by the following Annex 4, under the heading i. persons and entities involved in various crimes have been replaced by the following Table 34
+            output will be:
+                "Table 34": "Annex I is being replaced by the following Annex 4, under the heading i. persons and entities involved in various crimes have been replaced by the following"
+    Other examples:
+        - "Table 1":"under the heading ‘I. Persons and entities involved in nuclear or ballistic missile activities and persons and entities providing support to the Government of Iran.’, the following entries replace the corresponding entries in the list set out under the subheading ‘B. Entities’",
+        - "entries 59 (concerning Marou Sanat (a.k.a. Mohandesi Tarh Va Toseh Maro Sanat Company))":"in the list headed ‘I. Persons and entities involved in nuclear or ballistic missile activities and persons and entities providing support to the Government of Iran.’, under the subheading ‘B. Entities’, are deleted,"
+                
+    Note: 
+        - object can only be a table, any organizations(banks, ports, enterprises, aircrafts, etc.) or a person
         - If any individual is being deleted then the individual is the object
     
+
     Give the output as a json object:
-        as "object":"context
-        for example: 
-            {
-                "Table 1":"under the heading ‘I. Persons and entities involved in nuclear or ballistic missile activities and persons and entities providing support to the Government of Iran.’, the following entries replace the corresponding entries in the list set out under the subheading ‘B. Entities’",
-                "entries 59 (concerning Marou Sanat (a.k.a. Mohandesi Tarh Va Toseh Maro Sanat Company))":"in the list headed ‘I. Persons and entities involved in nuclear or ballistic missile activities and persons and entities providing support to the Government of Iran.’, under the subheading ‘B. Entities’, are deleted,"
-                //extract all the objects present in the given document and their corresponding contexts
-            }
 """
 
 name_extractor_prompt_sub= """
