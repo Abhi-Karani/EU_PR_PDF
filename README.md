@@ -1,4 +1,4 @@
-Process PDFs for EU_PR:
+*      Process PDFs for EU_PR:
   1. Extract PDF content retaining structure (text -> table -> text and so on)->(done)
 *       a. Get bbox_tables for tables on each page
         b. Get text outside the bbox_tables
