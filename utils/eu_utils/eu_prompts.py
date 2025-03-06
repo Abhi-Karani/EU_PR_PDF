@@ -8,6 +8,9 @@ context_call= """ You are a sanctions expert at a bank. you will be given a docu
         - Annex I is being replaced by the following Annex 4, under the heading i. persons and entities involved in various crimes have been replaced by the following Table 34
             output will be:
                 "Table 34": "Annex I is being replaced by the following Annex 4, under the heading i. persons and entities involved in various crimes have been replaced by the following"
+        - Following 745 entities are are added to the list of natural and legal persons, entities and bodies set out in Annex I to Regulation (EU) No 123/1234. Entities Table 21
+            output will be:
+                "Table 21": "Following 745 entities are are added to the list of natural and legal persons, entities and bodies set out in Annex I to Regulation (EU) No 123/1234. Entities"
     Other examples:
         - "Table 1":"under the heading ‘I. Persons and entities involved in nuclear or ballistic missile activities and persons and entities providing support to the Government of Iran.’, the following entries replace the corresponding entries in the list set out under the subheading ‘B. Entities’",
         - "entries 59 (concerning Marou Sanat (a.k.a. Mohandesi Tarh Va Toseh Maro Sanat Company))":"in the list headed ‘I. Persons and entities involved in nuclear or ballistic missile activities and persons and entities providing support to the Government of Iran.’, under the subheading ‘B. Entities’, are deleted,"
