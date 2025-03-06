@@ -1,0 +1,3 @@
+{
+    "input": "\nANNEX\nThe following entries are added to the list of natural and legal persons, entities and bodies set out in Annex III to Regulation (EU) 2023/1529:\nPersons\nTable 0\nEntities\nTable 1"
+}

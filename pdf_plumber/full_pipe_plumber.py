@@ -116,7 +116,7 @@ def post_process_contents(content):
         else:
             for row in item["Table"]:
                 for i in range(len(row)):  # Iterate using index to modify in place
-                    row[i] = get_display(row[i])
+                    row[i] = get_display(row[i]) if row[i] else ""
     return major_content
 
 

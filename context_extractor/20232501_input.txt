@@ -1,0 +1,3 @@
+{
+    "input": "\nANNEX\nRegulation (EU) 2016/44 is amended as follows:\n(1) in Annex III (‘List of natural and legal persons, entities or bodies referred to in Article 6(2)’), Part A (‘Persons’) is amended as follows:\n(a) entry 8 concerning HOUEJ, Mohamad Ali is replaced by the following:\nTable 0\n(b) entry 12 concerning MANSOUR, Abdallah is deleted;\n(c) entry 14 concerning QADHAF AL-DAM, Sayyid Mohammed is deleted;\n(2) in Annex III (‘List of natural and legal persons, entities or bodies referred to in Article 6(2)’), Part B (‘Entities’), entry 16 concerning Baroque Investments Limited is deleted."
+}
