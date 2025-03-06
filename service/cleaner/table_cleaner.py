@@ -1,5 +1,5 @@
 
-formats_date_of_listings = ["date of listing"]
+formats_date_of_listings = ["date of listing", "grounds for inclusion"]
 
 def is_header_row(row):
     if row[-1].strip().lower() in formats_date_of_listings:
