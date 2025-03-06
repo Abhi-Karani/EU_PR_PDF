@@ -3,8 +3,8 @@ import json
 from bidi.algorithm import get_display
 
 
-LANDSCAPE_COORDS = (35.93, 0, 777.49, 552.04)
-PORTRAIT_COORDS = (41.97, 63.34, 552.47, 807.12)
+LANDSCAPE_COORDS = (35.93, 0, 777.49, 595)
+PORTRAIT_COORDS = (0.3, 63.34, 594.7, 807.12)
 TABLE_EXPANSION_VERTICAL = 0
 TABLE_EXPANSION_HORIZONTAL = 0.3
 TABLE_SETTINGS_LINEANT = {"intersection_tolerance":100}
@@ -12,6 +12,7 @@ TABLE_SETTINGS_STRICT = {"intersection_tolerance":3}
 
 
 def get_y_coords_tables(page):
+    print(page.height, page.width)
     if page.height > page.width:
         tables_confined = page.within_bbox(PORTRAIT_COORDS).find_tables(table_settings=TABLE_SETTINGS_STRICT)
         dx1, _, dx2, _ = (PORTRAIT_COORDS)
@@ -133,10 +134,10 @@ def process_pdf(pdf_path):
     return final_main_content
 
 
-filename = "20241517"
-pdf_path = f"PDF/{filename}.pdf"
+# filename = "20241517"
+# pdf_path = f"PDF/{filename}.pdf"
 
-json_output = process_pdf(pdf_path)
+# json_output = process_pdf(pdf_path)
 
-with open(f"pdf_plumber/Results/{filename}_reverse.json", "w") as file:
-    json.dump(json_output, file, ensure_ascii=False, indent=4)
+# with open(f"pdf_plumber/Results/{filename}_reverse.json", "w") as file:
+#     json.dump(json_output, file, ensure_ascii=False, indent=4)

@@ -1,32 +1,21 @@
-name_extractor_prompt= """
-Given the content above, please extract the name and the corresponding change_type of all the sanctioned entities and individuals given in the content
-Give the output in format of name:change_type_flag,
-* also consider any sanctioned Vessels, aircrafts and ports *
-
-Definitions for name and change_type_flag are:\
-["name": 'Full name of the sanctioned individual and entity as per the given content.
-            ensure that the full name does NOT include aliases which are mentioned inside parentheses.
-"change_type_flag": "takes the value 'Addition', or 'Deletion', or 'Amendment' respectively for the change of type \
-        addition/listing, or deletion/de-listing, or amendment (i.e. any changes) to sanctioned individual/entity as per the provided content"]
-        incase if change of type is updates, then change_type_flag will be Amendment
-        
-Give the output in json format
-{
-    "result":
-        [   
+context_call= """ You are a sanctions expert at a bank. you will be given a document related to sanctions and \
+    your task will be to extract what object is being affected by the sanction and the context.
+    Definitions: 
+        1. object: the "table"/"enterprise"/"person" that the sanction is affecting, as per the given document
+        2. context: the complete action of what is happening to the object, exactly as it is given in the document
+                
+    Guidelines: 
+        - If an annex is being replaced by a table, then the table is the object
+        - If any individual is being deleted then the individual is the object
+    
+    Give the output as a json object:
+        as "object":"context
+        for example: 
             {
-                "Alexey Yevgenevich FILATOV": "Addition",
-                "Hadi ZAHOURIAN": "Amendment",
-                \\ add all the entries as per the content
+                "Table 1":"under the heading ‘I. Persons and entities involved in nuclear or ballistic missile activities and persons and entities providing support to the Government of Iran.’, the following entries replace the corresponding entries in the list set out under the subheading ‘B. Entities’",
+                "entries 59 (concerning Marou Sanat (a.k.a. Mohandesi Tarh Va Toseh Maro Sanat Company))":"in the list headed ‘I. Persons and entities involved in nuclear or ballistic missile activities and persons and entities providing support to the Government of Iran.’, under the subheading ‘B. Entities’, are deleted,"
+                //extract all the objects present in the given document and their corresponding contexts
             }
-        ]
-}
-
-DO NOT RETURN ANY ADDITIONAL TEXT (OR SPACES) AROUND THE JSON OUTPUT.
-***DO NOT MISS ANY SANCTIONED INDIVIDUALS AND ENTITIES***
-If the provided content does not mention detailed information about any change (addition/amendment/delition) \
-    for any sanctioned individuals or entities at all, then return only NONE string as the output.
-** Ensure to replace Addition by "1", Ammendment by "2" and "Deletion" by "3" for efficient downstream consumption **
 """
 
 name_extractor_prompt_sub= """

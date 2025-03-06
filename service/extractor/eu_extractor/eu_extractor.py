@@ -3,10 +3,13 @@
 from utils.eu_utils.eu_url_parser_utils import perform_token_check, copy_html_soup
 # from utils.eu_utils.eu_name_extractor_utils import perform_name_changetype_extraction
 # from utils.eu_utils.eu_common_utils import convert_output_of_names_changetype_call_to_df, final_output_to_data_frame, compare_dfs_and_get_output_in_json, LLMFault
-# from utils.eu_utils.eu_data_point_extractor_utils import perform_data_point_extraction
-# from utils.eu_utils.eu_common_utils import category_filter
+import utils.eu_utils.eu_data_point_extractor_utils as extractor_utils
+import utils.eu_utils.eu_common_utils as eu_common_utils
+import utils.eu_utils.eu_prompts as prompts
 # Init logger with file name
 from service.logger.logger import get_logger
+import json
+
 import asyncio
 logger = get_logger("eu_extractor")
 
@@ -34,10 +37,12 @@ def extract_records(json_file):
         else:
             context_call += "\n"+f"Table {table_count}"
             table_count+=1
-    
-    print(context_call)
-    
+        
     perform_token_check(str(context_call), "gpt-4") 
+    
+    table_context = extractor_utils.llm_call_and_parse_json_dict_response(eu_common_utils.get_messages(context_call, prompts.context_call))
+    print(table_context)
+    return context_call, table_context
     
     # html_name_change_type = copy_html_soup(full_content_html)
     # output_names_change_type, llm_call_count = perform_name_changetype_extraction(html_name_change_type)
