@@ -1,5 +1,13 @@
 Process PDFs for EU_PR:
   1. Extract PDF content retaining structure (text -> table -> text and so on)->(done)
-  2. That becomes input to the Context_call. This gives context corresponding to each table and person/entity (if mentioned individually as paragraph)->(inprogress)
-  3. We pass each row with the corresponding table's context and non tabular data with its corresponding context to the data-point-extractor call
-  4. We extract all the information along with the change type in the data-point-extractor call
+          a. Get bbox_tables for tables on each page
+          b. Get text outside the bbox_tables
+          c. Get tables inside the bbox_tables
+          d. Reverse (RTL scripts) for each paragraph and each cell
+  2. This becomes input to the Context_call. ->(inprogress)
+          a. Get context corresponding to each table
+          b. Get context corresponding to each person/entity (if mentioned individually as paragraph)
+  3. Prep Data:
+          a. Pass each row with the context of the table
+          b. Pass non tabular elements (2b) with their corresponding contexts
+  4. Extract all the information along with the change type in the data-point-extractor call
