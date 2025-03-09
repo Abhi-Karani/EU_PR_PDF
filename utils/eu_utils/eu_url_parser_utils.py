@@ -222,8 +222,8 @@ def perform_token_check(string: str, model: str) -> int:
     
     num_tokens = len(encoding.encode(string))
     logger.info(f"URL has {num_tokens} tokens")
-    if num_tokens > 122299: #128000-4096(output tokens) - 1605(prompt tokens for subsequent prompt(largest prompt)+datapointsextractor )
-        raise Exception(f"input tokens greater that 128000")
+    if num_tokens > 110011: #128000-16384(output tokens) - 1605(prompt tokens for subsequent prompt(largest prompt)+datapointsextractor )
+        raise Exception(f"input tokens greater that 110011")
     return num_tokens
 
 def get_html_text_oj_tables_seperate(fullcontenthtml):  

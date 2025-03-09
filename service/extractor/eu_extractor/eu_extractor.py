@@ -25,12 +25,11 @@ def extractor(press_release_record, full_content_html):
 
 async def extract_records(context):
     superset_records = []
-
-    for key,value in context.items():
-        if "Table" in key:
-            output_list = await extractor_utils.parallelized_processing(value)
-            superset_records.extend(output_list)
+    paras = []
     
+    superset_records = await extractor_utils.parallelized_processing(context)
+    
+    return superset_records
 
     # logger.info(f"Total LLM calls made: {llm_call_count}")
     # json_obj = compare_dfs_and_get_output_in_json(final_output_data_frame, names_data_frame)
