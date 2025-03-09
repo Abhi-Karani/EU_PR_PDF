@@ -1,3 +1,17 @@
 {
-    "input": "\nANNEX\nAnnex II to Regulation (EU) No 36/2012 is amended as follows:\n(1) in Section A ‘(Persons)’:\n(i) the following six entries are deleted:\n23. Zoulhima CHALICHE;\n41. Ali DOUBA;\n145. Michel KASSOUHA;\n227. Ahmad AL-HAMU;\n289. Mahir Burhan Eddine AL-IMAM;\n337. Mustafa AL-MASALMAH; and\n(ii) the following 96 entries are replaced by the following:\nTable 0\n(2) in Section B ‘(Entities)’, entry 95 is replaced by the following:\nTable 1"
+    "input": "
+    ANNEX
+    Annex II to Regulation (EU) No 36/2012 is amended as follows:
+    (1) in Section A ‘(Persons)’:
+    (i) the following six entries are deleted:
+    23. Zoulhima CHALICHE;
+    41. Ali DOUBA;
+    145. Michel KASSOUHA;
+    227. Ahmad AL-HAMU;
+    289. Mahir Burhan Eddine AL-IMAM;
+    337. Mustafa AL-MASALMAH; and
+    (ii) the following 96 entries are replaced by the following:
+    Table 0
+    (2) in Section B ‘(Entities)’, entry 95 is replaced by the following:
+    Table 1"
 }

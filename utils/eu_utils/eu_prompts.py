@@ -23,78 +23,6 @@ context_call= """ You are a sanctions expert at a bank. you will be given a docu
     Give the output as a json object:
 """
 
-name_extractor_prompt_sub= """
-Given the content above, please extract the name and the corresponding change_type of all the sanctioned entities and individuals \
-    given in the content after the last_entry_extracted.
-
-
-Give the output in format of name:change_type_flag.
-
-Definitions for name and change_type_flag are:\
-["name": 'Full name of the sanctioned individual/entity as per the given content.
-            Ensure that the full name includes titles (such as Mr., Dr., General, Colonel, Major, etc.).
-            Also ensure that the full name does NOT include aliases which are mentioned inside parentheses.
-    
-            Please refer to the following examples to understand the format in which the provided content may have aliases:
-            Examples:
-            1. "Dimitriy (Dimitry, Dmitri, Dmitry) Valerievich UTKIN" -> Name: "Dimitriy Valerievich UTKIN"
-            2. "Ekaterina Vasilyevna TERESHCHENKO Ekaterina Vasilievna TERESHCHENKO" -> Name: "Ekaterina Vasilyevna TERESHCHENKO"
-            3. "Elena Valerievna KRAVCHENKO / Elena Valeryevna KRAVCHENKO" -> Name: "Elena Valerievna KRAVCHENKO"
-            4. "Mikhail Vladimirovich DEGTYARYOV/DEGTYAREV" -> Name: "Mikhail Vladimirovich DEGTYARYOV"
-            5. "yanina valeryevna okhota, kozhemyako" -> Name: "yanina valeryevna okhota"
-            6. "Khatiba Imam Al-Bukhari (KIB)" -> Name: "Khatiba Imam Al-Bukhari"
-            7. "Anant Kiran Gupta (Goopta)" -> Name: "Anant Kiran Gupta"',
-"change_type_flag": "takes the value 'Addition', or 'Deletion', or 'Amendment' respectively for the change of type \
-        addition/listing, or deletion/de-listing, or amendment (i.e. any changes) to sanctioned individual/entity as per the provided content"]
-
-bodies include sanctioned individuals and entities
-[for example consider the following bodies are present in the document in this given order \
-Annex I
-
-part A
-person_1
-person_8
-person_3
-person_2
-person_4
-person_120
-person_5
-entity_3
-entity_4
-entity_1
-//more bodies
-and the last_entry_extracted is person_3 you have to extract the bodies in the same order\
-      in which it is given in the content AFTER the last_entry_extracted i.e. 
-person_2
-person_4
-person_120
-person_5
-entity_3
-entity_4
-entity_1
-//extract ALL the remaining bodies
-] 
-
-Give the output in json format
-{
-    "result":
-        [   
-            {
-                "Alexey Yevgenevich FILATOV": "Addition",
-                "Hadi ZAHOURIAN": "Amendment",
-                \\ add all the entries as per the content
-            }
-        ]
-}
-
-DO NOT RETURN ANY ADDITIONAL TEXT (OR SPACES) AROUND THE JSON OUTPUT.
-
-**Treat Vessels as ENTITIES**
-If the provided content does not mention detailed information about any change (addition/amendment/delition) 
-for any sanctioned individuals or entities at all, then return only NONE string as the output.
-AGAIN, DO NOT RETURN ANY ADDITIONAL TEXT (OR SPACES) AROUND THE NONE STRING.
-"""
-
 json_format_expected_from_output = """{
 
     "result":
@@ -132,7 +60,7 @@ Note: an IMO number is assigned only to a VESSEL
 #**INCASE ASSOCIATED INDIVIDUALS/ENTITIES ARE MENTIONED FOR A RECORD, EACH OF THOSE INDIVIDUALS/ENTITIES ARE SUPPOSED TO \
             # BE CONSIDERED AS SEPERATE RECORDS *ONLY IF* DATE OF LISTING IS MENTIONED EXPLICITLY FOR EACH OF THEM **
 
-data_point_extractor_system_prompt_1 = f"""
+extractor_system_prompt = f"""
 Use the given content to extract all (or as many of them as present in the content) the data points for\
       all of the sanctioned individuals and entities as per the provided content.
 

@@ -1,3 +1,57 @@
 {
-    "input": "\nANNEX I\nIn Annex II to Regulation (EU) No 833/2014, the following is added:\n‘List of software referred to in Article 3(1a)\n“Software” used in oil and gas exploration, namely:\n— “Software” for reservoir exploration and calculation\n— “Software” for calculation, processing and analysis of seismic data\n— “Software” for geological visual inspections as well as for respective characterisation/modelling/visualisation/calculation\n— Drilling “software”, planning “software” for drilling processes, “software” for trajectory of drilling processes\n— “Software” for inertial navigation systems for drilling\n— Real-time well monitoring “software”\n— Observation and safeguarding “software” in oil and gas production’. ANNEX II\nAnnex IV to Regulation (EU) No 833/2014 is replaced by the following: ‘ANNEX IV\nThis Annex lists natural or legal persons, entities or bodies which are military end-users, form part of Russia’s military and industrial complex or which have commercial or other links with or which otherwise\nsupport Russia’s defence and security sector. These natural or legal persons, entities or bodies contribute to Russia’s military and technological enhancement or to the development of Russia’s defence and security sector.\nThey include natural or legal persons, entities or bodies in third countries other than Russia. Their inclusion in this Annex does not entail any attribution of responsibility for their actions to the jurisdiction in which\nthey are operating.\nList of natural or legal persons, entities or bodies, referred to in Articles 2(7), 2a(7) and 2b(1)\nTable 0\nANNEX X\nAnnex XLII to Regulation (EU) No 833/2014 is replaced by the following:\n‘ANNEX XLII\nList of vessels referred to in Article 3s\nTable 1\nANNEX XI\nThe Annex XLIV to Regulation (EU) No 833/2014 is replaced by the following:\n‘ANNEX XLIV\nList of legal persons, entities and bodies referred into Article 5ac\n1. Bank BelVEB\n2. Belgazprombank\n3. VTB Bank (PJSC) Shanghai Branch’. ANNEX XII\nAnnex XLV to Regulation (EU) No 833/2014 is replaced by the following:\n‘ANNEX XLV\nList of legal persons, entities and bodies, which are credit and financial institutions, referred to in Article 5ad\nPart A\nPart B\nPart C’. ANNEX XIII\nThe following Annex is added to Regulation (EU) No 833/2014\n‘ANNEX XLVI\nList of legal persons, entities and bodies referred to in Article 3d(1b)\n[…]’. ANNEX XIV\nThe following Annex is added to Regulation (EU) No 833/2014:\n‘ANNEX XLVII\nList of ports and lock and airports as referred to in Article 5ae\nPart A – List of ports and locks\nTable 2\nPart B – List of airports\nTable 3\nANNEX XV\nThe following Annex is added to Regulation (EU) No 833/2014:\n‘ANNEX XLVIII\nList of goods as referred to in Article 12gb\nCN code Description\n8502 20 Generating sets with spark-ignition internal combustion piston engines\n8536 50 Other switches’."
+    "input": "
+    ANNEX I
+    In Annex II to Regulation (EU) No 833/2014, the following is added:
+    ‘List of software referred to in Article 3(1a)
+    “Software” used in oil and gas exploration, namely:
+    — “Software” for reservoir exploration and calculation
+    — “Software” for calculation, processing and analysis of seismic data
+    — “Software” for geological visual inspections as well as for respective characterisation/modelling/visualisation/calculation
+    — Drilling “software”, planning “software” for drilling processes, “software” for trajectory of drilling processes
+    — “Software” for inertial navigation systems for drilling
+    — Real-time well monitoring “software”
+    — Observation and safeguarding “software” in oil and gas production’. ANNEX II
+    Annex IV to Regulation (EU) No 833/2014 is replaced by the following: ‘ANNEX IV
+    This Annex lists natural or legal persons, entities or bodies which are military end-users, form part of Russia’s military and industrial complex or which have commercial or other links with or which otherwise
+    support Russia’s defence and security sector. These natural or legal persons, entities or bodies contribute to Russia’s military and technological enhancement or to the development of Russia’s defence and security sector.
+    They include natural or legal persons, entities or bodies in third countries other than Russia. Their inclusion in this Annex does not entail any attribution of responsibility for their actions to the jurisdiction in which
+    they are operating.
+    List of natural or legal persons, entities or bodies, referred to in Articles 2(7), 2a(7) and 2b(1)
+    Table 0
+    ANNEX X
+    Annex XLII to Regulation (EU) No 833/2014 is replaced by the following:
+    ‘ANNEX XLII
+    List of vessels referred to in Article 3s
+    Table 1
+    ANNEX XI
+    The Annex XLIV to Regulation (EU) No 833/2014 is replaced by the following:
+    ‘ANNEX XLIV
+    List of legal persons, entities and bodies referred into Article 5ac
+    1. Bank BelVEB
+    2. Belgazprombank
+    3. VTB Bank (PJSC) Shanghai Branch’. ANNEX XII
+    Annex XLV to Regulation (EU) No 833/2014 is replaced by the following:
+    ‘ANNEX XLV
+    List of legal persons, entities and bodies, which are credit and financial institutions, referred to in Article 5ad
+    Part A
+    Part B
+    Part C’. ANNEX XIII
+    The following Annex is added to Regulation (EU) No 833/2014
+    ‘ANNEX XLVI
+    List of legal persons, entities and bodies referred to in Article 3d(1b)
+    […]’. ANNEX XIV
+    The following Annex is added to Regulation (EU) No 833/2014:
+    ‘ANNEX XLVII
+    List of ports and lock and airports as referred to in Article 5ae
+    Part A – List of ports and locks
+    Table 2
+    Part B – List of airports
+    Table 3
+    ANNEX XV
+    The following Annex is added to Regulation (EU) No 833/2014:
+    ‘ANNEX XLVIII
+    List of goods as referred to in Article 12gb
+    CN code Description
+    8502 20 Generating sets with spark-ignition internal combustion piston engines
+    8536 50 Other switches’."
 }

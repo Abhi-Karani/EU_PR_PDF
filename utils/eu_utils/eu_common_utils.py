@@ -20,7 +20,7 @@ from config.config import Config
 llm = "gpt-4o-2024-05-13" 
 llm_for_name_alias = "gpt-4o" 
 temperature = 0
-max_tokens = 4096
+max_tokens = 16384
 max_retries_constant_delay = 3
 retry_delay_constant_delay = 30
 client = OpenAI(

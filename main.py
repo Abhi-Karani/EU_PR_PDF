@@ -1,3 +1,4 @@
+from service.extractor.eu_extractor.eu_context_extractor import extract_context
 from service.extractor.eu_extractor.eu_extractor import extract_records
 from pdf_plumber.full_pipe_plumber import process_pdf
 from service.cleaner.table_cleaner import clean_json_tables
@@ -25,10 +26,18 @@ with open(f"pdf_plumber/Results/cleaned/{filename}_cleaned.json", "r") as file:
     a = json.load(file)
     
 
-content, context = extract_records(a)
+content, context = extract_context(a)
 with open(f"context_extractor/{filename}_input.txt", "w") as file:
         json.dump({"input":str(content)}, file, ensure_ascii=False, indent=4)
 
 with open(f"context_extractor/{filename}_output.json", "w") as file:
         json.dump(context, file, ensure_ascii=False, indent=4)
         
+
+# if-else less than 5 pages walla
+# tokens walla chaiyeh text mein
+# if tokens greater than X then seperate flow/handle
+# pidantic models
+
+records = extract_records(context)
+
